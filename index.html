@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áurea Moda Feminina</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    
+    <header id="main-header">
+        <nav>
+            <h1>Áurea</h1>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="pages/produtos.html">Nova Coleção</a></li>
+                <li><a href="index.html#sobre">Nossa Essência</a></li>
+                <li><a href="pages/contato.html">Contato</a></li>
+            </ul>
+            <button id="cart-btn">Sacola (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="home" class="hero hero-fixed-bg">
+            <article class="hero-content">
+                <h2>Elegância em cada detalhe.</h2>
+                <p>Descubra a nova coleção pensada para realçar a sua essência com sofisticação e conforto.</p>
+                <a href="pages/produtos.html" class="btn-primary">Ver Produtos</a>
+            </article>
+        </section>
+
+        <section id="colecao" class="products carrousel-section">
+            <h2>Destaques da Semana</h2>
+            
+            <article class="carrousel-container">
+                <button class="carrousel-prev" aria-label="Anterior">&#10094;</button>
+                <button class="carrousel-next" aria-label="Próximo">&#10095;</button>
+                
+                <ul class="carrousel-track">
+                    <li class="carrousel-slide is-selected">
+                        <figure class="carrousel-item">
+                            <img src="imgs/img1.jpeg" alt="Vestido Floral Retrato">
+                            <figcaption>
+                                <h3>Vestido Midi Floral</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carrousel-slide">
+                        <figure class="carrousel-item">
+                            <img src="imgs/img2.jpeg" alt="Blazer Alfaiataria Retrato">
+                            <figcaption>
+                                <h3>Blazer Alfaiataria Premium</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carrousel-slide">
+                        <figure class="carrousel-item">
+                            <img src="imgs/img3.jpeg" alt="Calça Pantalona Retrato">
+                            <figcaption>
+                                <h3>Calça Pantalona Linho</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carrousel-slide">
+                        <figure class="carrousel-item">
+                            <img src="imgs/img4.jpeg" alt="Camisa Seda Retrato">
+                            <figcaption>
+                                <h3>Camisa Seda Elegance</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carrousel-slide">
+                        <figure class="carrousel-item">
+                            <img src="imgs/img5.jpeg" alt="Saia Plissada Retrato">
+                            <figcaption>
+                                <h3>Saia Plissada Sofisticata</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+
+                <nav class="carrousel-nav">
+                    <button class="carrousel-indicator is-selected"></button>
+                    <button class="carrousel-indicator"></button>
+                    <button class="carrousel-indicator"></button>
+                    <button class="carrousel-indicator"></button>
+                    <button class="carrousel-indicator"></button>
+                </nav>
+            </article>
+
+            <a href="pages/produtos.html" class="btn-secondary" style="margin-top: 40px; display: inline-block;">Ver Todos os Produtos</a>
+        </section>
+
+        <section id="sobre" class="about">
+            <article class="about-text">
+                <h2>Feito para Você</h2>
+                <p>A Áurea nasceu do desejo de vestir mulheres reais com peças atemporais. Acreditamos que a verdadeira moda é aquela que te permite ser você mesma, acompanhando o seu ritmo do trabalho ao final de semana.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <section class="footer-info">
+            <article>
+                <h3>Áurea Moda</h3>
+                <p>Beleza que acompanha o seu ritmo.</p>
+            </article>
+            <article>
+                <h4>Atendimento</h4>
+                <ul>
+                    <li>✉️ contato@aureamoda.com.br</li>
+                    <li>📞 (11) 98765-4321</li>
+                </ul>
+            </article>
+        </section>
+        <p class="copyright">&copy; 2026 Áurea Moda Feminina. Todos os direitos reservados.</p>
+        <button id="back-to-top" title="Voltar ao topo">&#8679;</button>
+    </footer>
+
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
