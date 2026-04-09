@@ -32,66 +32,54 @@
         </section>
 
         <section id="colecao" class="products carrousel-section">
-            <h2>Destaques da Semana</h2>
-            
-            <article class="carrousel-container">
-                <button class="carrousel-prev" aria-label="Anterior">&#10094;</button>
-                <button class="carrousel-next" aria-label="Próximo">&#10095;</button>
-                
-                <ul class="carrousel-track">
-                    <li class="carrousel-slide is-selected">
-                        <figure class="carrousel-item">
-                            <img src="imgs/img1.jpeg" alt="look de trabalho">
-                            <figcaption>
-                                <h3>Look de trabalho </h3>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carrousel-slide">
-                        <figure class="carrousel-item">
-                            <img src="imgs/img2.jpeg" alt="Amarelo sereno">
-                            <figcaption>
-                                <h3>Amarelo sereno</h3>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carrousel-slide">
-                        <figure class="carrousel-item">
-                            <img src="imgs/img3.jpeg" alt="Essência clássica">
-                            <figcaption>
-                                <h3>Essência clássica</h3>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carrousel-slide">
-                        <figure class="carrousel-item">
-                            <img src="imgs/img4.jpeg" alt="Clássico atemporal">
-                            <figcaption>
-                                <h3>Clássico atemporal</h3>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carrousel-slide">
-                        <figure class="carrousel-item">
-                            <img src="imgs/img5.jpeg" alt="Brilho que transforma">
-                            <figcaption>
-                                <h3>Brilho que transforma</h3>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul>
+    <h2>Destaques da Semana</h2>
+    
+    <article class="carrousel-viewport">
+        <button class="carrousel-btn prev" aria-label="Anterior">&#10094;</button>
+        <button class="carrousel-btn next" aria-label="Próximo">&#10095;</button>
+        
+        <ul class="carrousel-track" id="track">
+            <li class="carrousel-slide">
+                <figure class="carrousel-item">
+                    <img src="imgs/img1.jpeg" alt="Look de Trabalho">
+                    <figcaption><h3>Look de Trabalho</h3></figcaption>
+                </figure>
+            </li>
+            <li class="carrousel-slide">
+                <figure class="carrousel-item">
+                    <img src="imgs/img2.jpeg" alt="Amarelo Sereno">
+                    <figcaption><h3>Amarelo Sereno</h3></figcaption>
+                </figure>
+            </li>
+            <li class="carrousel-slide">
+                <figure class="carrousel-item">
+                    <img src="imgs/img3.jpeg" alt="Essência Clássica">
+                    <figcaption><h3>Essência Clássica</h3></figcaption>
+                </figure>
+            </li>
+            <li class="carrousel-slide">
+                <figure class="carrousel-item">
+                    <img src="imgs/img4.jpeg" alt="Clássico Atemporal">
+                    <figcaption><h3>Clássico Atemporal</h3></figcaption>
+                </figure>
+            </li>
+            <li class="carrousel-slide">
+                <figure class="carrousel-item">
+                    <img src="imgs/img5.jpeg" alt="Brilho que Transforma">
+                    <figcaption><h3>Brilho que Transforma</h3></figcaption>
+                </figure>
+            </li>
+        </ul>
+    </article>
 
-                <nav class="carrousel-nav">
-                    <button class="carrousel-indicator is-selected"></button>
-                    <button class="carrousel-indicator"></button>
-                    <button class="carrousel-indicator"></button>
-                    <button class="carrousel-indicator"></button>
-                    <button class="carrousel-indicator"></button>
-                </nav>
-            </article>
-
-            <a href="pages/produtos.html" class="btn-secondary" style="margin-top: 40px; display: inline-block;">Ver Todos os Produtos</a>
-        </section>
+    <nav class="carrousel-indicators" id="dots-nav">
+        <button class="indicator active"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+    </nav>
+    </section>
 
         <section id="sobre" class="about">
             <article class="about-text">
