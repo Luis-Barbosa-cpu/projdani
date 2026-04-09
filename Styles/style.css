@@ -1,4 +1,5 @@
-/* ÁUREA MODA FEMININA - ESTILO OFICIAL
+/* ÁUREA MODA FEMININA - ESTILO OFICIAL 
+   Foco: Semântica HTML5, Design Premium e Responsividade
    Desenvolvido por: L&L Tech Solutions 
 */
 
@@ -31,7 +32,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Container Semântico (usado em sections) */
+/* Container Semântico */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -111,7 +112,7 @@ nav a:hover, nav a.highlight-nav {
 
 /* 3. SEÇÃO HERO (DESTAQUE) */
 main {
-    padding-top: 80px; /* Evita que o conteúdo suba para debaixo do header fixo */
+    padding-top: 80px; 
 }
 
 .hero {
@@ -121,7 +122,6 @@ main {
     justify-content: center;
     text-align: center;
     color: var(--white);
-    /* Usar uma imagem de alta qualidade para o fundo */
     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
                 url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover no-repeat fixed;
 }
@@ -136,13 +136,6 @@ main {
     margin-bottom: 25px;
     font-family: 'Georgia', serif;
     font-weight: normal;
-    letter-spacing: 1px;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 45px;
-    font-weight: 300;
 }
 
 .btn-primary, .btn-secondary {
@@ -157,172 +150,124 @@ main {
     cursor: pointer;
 }
 
-.btn-primary {
-    background-color: var(--gold);
-    color: var(--white);
-}
+.btn-primary { background-color: var(--gold); color: var(--white); }
+.btn-primary:hover { background-color: var(--gold-dark); transform: translateY(-2px); }
 
-.btn-primary:hover {
-    background-color: var(--gold-dark);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: var(--text-dark);
-    color: var(--white);
-}
-
-.btn-secondary:hover {
-    background-color: #444;
-}
-
-/* 4. CARROSSEL (Página Inicial) */
+/* 4. CARROSSEL INFINITO 360° */
 .carrousel-section {
     padding: 110px 0;
     text-align: center;
-    overflow: hidden;
 }
 
 .carrousel-section h2 {
     font-size: 2.4rem;
-    margin-bottom: 65px;
+    margin-bottom: 60px;
     font-family: 'Georgia', serif;
     color: var(--gold);
     font-weight: normal;
 }
 
-.carrousel-container {
+.carrousel-viewport {
     position: relative;
-    max-width: 480px; /* Largura ideal para fotos verticais no carrossel */
+    max-width: 450px; /* Largura focada em uma imagem vertical */
     margin: 0 auto;
+    overflow: hidden; /* Esconde as imagens vizinhas */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .carrousel-track {
     display: flex;
     list-style: none;
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* Curva cubic-bezier para movimento fluido */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .carrousel-slide {
-    flex: 0 0 100%;
-}
-
-.carrousel-item {
-    background: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    min-width: 100%;
 }
 
 .carrousel-item img {
     width: 100%;
-    aspect-ratio: 2 / 3; /* PROPORÇÃO RETRATO 2:3 */
+    aspect-ratio: 2 / 3; /* Proporção Retrato Moda */
     object-fit: cover;
-    object-position: top;
     display: block;
 }
 
 .carrousel-item figcaption {
-    padding: 30px;
+    padding: 25px;
+    background: var(--white);
 }
 
-.carrousel-item h3 {
-    font-size: 1.3rem;
-    font-weight: normal;
-    color: var(--text-dark);
-    letter-spacing: 1px;
-}
-
-/* Controles do Carrossel */
-.carrousel-prev, .carrousel-next {
+/* Botões de Navegação do Carrossel */
+.carrousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--white);
-    color: var(--text-dark);
+    background: rgba(255,255,255,0.9);
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.2rem;
     z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    color: var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: all 0.3s;
 }
 
-.carrousel-prev:hover, .carrousel-next:hover {
-    background: var(--gold);
-    color: var(--white);
-}
+.carrousel-btn:hover { background: var(--gold); color: var(--white); }
+.prev { left: 15px; }
+.next { right: 15px; }
 
-.carrousel-prev { left: -75px; }
-.carrousel-next { right: -75px; }
-
-.carrousel-nav {
-    margin-top: 40px;
+/* Indicadores (Dots) */
+.carrousel-indicators {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 12px;
 }
 
-.carrousel-indicator {
-    width: 10px;
-    height: 10px;
+.indicator {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     border: 1px solid var(--gold);
-    background: none;
+    background: transparent;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
-.carrousel-indicator.is-selected {
+.indicator.active {
     background: var(--gold);
+    width: 20px;
+    border-radius: 10px;
 }
 
-/* 5. VITRINE DE PRODUTOS (Página de Produtos) */
+/* 5. VITRINE DE PRODUTOS */
 .page-header {
     padding: 140px 0 70px;
     text-align: center;
     background-color: #f3f1eb;
 }
 
-.page-header h1 {
-    font-size: 2.8rem;
-    color: var(--text-dark);
-    font-family: 'Georgia', serif;
-    margin-bottom: 15px;
-}
-
-.page-header p {
-    font-size: 1.1rem;
-    color: var(--text-gray);
-}
-
-.products-vitrine {
-    padding: 90px 5%;
-    max-width: 1240px;
-    margin: 0 auto;
-}
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 45px 35px;
+    gap: 40px;
+    padding: 80px 0;
 }
 
 .product-card {
     background: var(--white);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid transparent;
+    transition: transform 0.4s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
+.product-card:hover { transform: translateY(-10px); }
 
 .product-card img {
     width: 100%;
-    aspect-ratio: 2 / 3; /* MESMA PROPORÇÃO DO CARROSSEL */
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     object-position: top;
     display: block;
@@ -333,20 +278,11 @@ main {
     text-align: center;
 }
 
-.product-card h3 {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 8px;
-    color: var(--text-dark);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 .product-card p {
     color: var(--gold);
     font-weight: 600;
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
 }
 
 .add-to-cart {
@@ -357,78 +293,68 @@ main {
     width: 100%;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.8rem;
     letter-spacing: 2px;
-    transition: background 0.3s;
+    font-size: 0.8rem;
 }
 
-.add-to-cart:hover {
-    background-color: var(--gold);
+.add-to-cart:hover { background-color: var(--gold); }
+
+/* 6. PÁGINA DE CONTATO */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 80px 0;
 }
 
-/* 6. SEÇÃO SOBRE */
-.about {
-    background-color: #f1efe9;
-    padding: 120px 5%;
+.contact-card {
+    background: var(--white);
+    padding: 40px;
     text-align: center;
+    border: 1px solid var(--border-gray);
+    transition: 0.3s;
 }
 
-.about-text {
-    max-width: 750px;
-    margin: 0 auto;
+.contact-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+.contact-icon { font-size: 2.5rem; display: block; margin-bottom: 20px; }
+
+.btn-whatsapp { color: #25D366; border-bottom: 2px solid #25D366; text-decoration: none; font-weight: 600; }
+.btn-email { color: var(--text-dark); border-bottom: 2px solid var(--text-dark); text-decoration: none; font-weight: 600; }
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto 100px;
+    background: var(--white);
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-family: 'Georgia', serif;
-    color: var(--gold);
+.contact-form h2 { font-family: 'Georgia', serif; text-align: center; margin-bottom: 40px; }
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-gray);
+    background-color: var(--bg-light);
 }
 
-.about-text p {
-    font-size: 1.15rem;
-    line-height: 1.9;
-    color: #444;
-}
-
-/* 7. RODAPÉ */
+/* 7. RODAPÉ E EXTRAS */
 footer {
     background-color: var(--text-dark);
     color: var(--white);
-    padding: 90px 5% 40px;
-    position: relative;
+    padding: 80px 5% 40px;
 }
-
-.footer-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto 60px;
-}
-
-.footer-info h3, .footer-info h4 {
-    color: var(--gold);
-    margin-bottom: 25px;
-    font-family: 'Georgia', serif;
-    font-weight: normal;
-}
-
-.footer-info h3 { font-size: 1.8rem; letter-spacing: 2px; }
-
-.footer-info ul { list-style: none; }
-.footer-info li { margin-bottom: 15px; color: #b3b3b3; font-size: 0.95rem; }
 
 .copyright {
     text-align: center;
-    padding-top: 35px;
+    padding-top: 30px;
     border-top: 1px solid #3d3d3d;
     color: #777;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 
-/* Botão Voltar ao Topo */
 #back-to-top {
     display: none;
     position: fixed;
@@ -441,160 +367,15 @@ footer {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.2rem;
-    z-index: 100;
-    transition: all 0.3s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-#back-to-top:hover {
-    background-color: var(--gold-dark);
-    transform: scale(1.1);
-}
-
-/* 8. RESPONSIVIDADE (MOBILE) */
-@media (max-width: 1024px) {
-    .carrousel-prev { left: 10px; }
-    .carrousel-next { right: 10px; }
-}
-
+/* 8. RESPONSIVIDADE */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 25px;
-        padding: 20px 5%;
-    }
-    
-    nav ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero h2 { font-size: 2.6rem; }
-    .hero p { font-size: 1.1rem; }
-    
-    .carrousel-container { max-width: 90%; }
-    .carrousel-item img, .product-card img { height: auto; }
-    
-    /* No mobile, removemos o efeito fixed do fundo para melhor performance */
-    .hero { background-attachment: scroll; height: 65vh; }
-    
-    .page-header h1 { font-size: 2.2rem; }
-}
-/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO --- */
-
-.contact-methods {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 80px 5%;
-}
-
-.contact-card {
-    background: var(--white);
-    padding: 40px;
-    text-align: center;
-    border: 1px solid var(--border-gray);
-    transition: transform 0.3s;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
-}
-
-.contact-icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.contact-card h3 {
-    font-family: 'Georgia', serif;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--gold);
-}
-
-.contact-card p {
-    color: var(--text-gray);
-    margin-bottom: 25px;
-    font-size: 0.95rem;
-}
-
-/* Links de Contato Estilizados */
-.btn-whatsapp, .btn-email {
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-whatsapp {
-    color: #25D366; /* Cor oficial do WhatsApp */
-    border-bottom: 2px solid #25D366;
-    padding-bottom: 5px;
-    transition: opacity 0.3s;
-}
-
-.btn-email {
-    color: var(--text-dark);
-    border-bottom: 2px solid var(--text-dark);
-    padding-bottom: 5px;
-}
-
-.btn-whatsapp:hover, .btn-email:hover {
-    opacity: 0.7;
-}
-
-/* Formulário de Contato */
-.contact-form-section {
-    padding: 0 5% 100px;
-}
-
-.contact-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--white);
-    padding: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.contact-form h2 {
-    font-family: 'Georgia', serif;
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: normal;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-gray);
-    background-color: var(--bg-light);
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-}
-
-.contact-form .btn-primary {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .contact-form {
-        padding: 30px 20px;
-    }
+    nav { flex-direction: column; gap: 20px; }
+    .hero h2 { font-size: 2.5rem; }
+    .carrousel-viewport { max-width: 85%; }
+    .carrousel-btn { width: 40px; height: 40px; }
+    .prev { left: 5px; }
+    .next { right: 5px; }
 }
